@@ -1,4 +1,4 @@
-class sshpass < Formula
+class Sshpass < Formula
     desc "Non-interactive ssh password authentication"
     homepage "https://sourceforge.net/projects/sshpass/"
     url "https://downloads.sourceforge.net/project/sshpass/sshpass/1.10/sshpass-1.10.tar.gz"
