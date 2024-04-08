@@ -8,7 +8,7 @@ class Proxmoxer < Formula
     license "GPL-3.0-only"
   
     depends_on "python@3.12"
-    depends_on "python3-requests"
+    depends_on "python-requests"
 
     resource "setuptools" do
         url "https://files.pythonhosted.org/packages/4d/5b/dc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83d/setuptools-69.2.0.tar.gz"
