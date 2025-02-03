@@ -2,9 +2,9 @@ class Figurine < Formula
   desc "Print your name in style"
   homepage "https://github.com/arsham/figurine"
   
-  # Use the latest release
-  version = `git ls-remote --tags https://github.com/arsham/figurine.git | awk '{print $2}' | grep -v '{}' | sort -V | tail -n 1 | sed 's/refs\\/tags\\/v//'`.chomp
-  url "https://github.com/arsham/figurine/archive/refs/tags/v#{version}.tar.gz"
+  version "v1.3.0"
+  url "https://github.com/arsham/figurine/archive/refs/tags/#{version}.tar.gz"
+  sha256 "e969f4f9e617201fc92d5467c7af11578a4f3d1f025ad2110ee2c56a663cbdf0"
   head "https://github.com/arsham/figurine.git", branch: "main"
 
   depends_on "go" => :build
