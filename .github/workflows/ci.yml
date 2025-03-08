@@ -21,8 +21,6 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
       -
-        name: Install sshpass
-        run: brew install sshpass
-      -
-        name: Check sshpass installation
-        run: which sshpass
+        name: Install Packages
+        run: brew install figurine certbot-dns-cloudflare
+
