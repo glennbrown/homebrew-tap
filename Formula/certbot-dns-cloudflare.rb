@@ -9,11 +9,6 @@ class CertbotDnsCloudflare < Formula
     
     depends_on "certbot"
     
-    resource "cloudflare" do
-      url "https://files.pythonhosted.org/packages/77/50/d7631896ba71f2ffec1a704fbebe88e6f15b3acff8386e94f65825c506c5/cloudflare-2.14.2.tar.gz"
-      sha256 "63c307958c471e5dd11afdbce22b4e16a540a26a9f032ab3c65bde375268cfde"
-    end
-    
     def install
       # Find the certbot installation
       certbot_path = Formula["certbot"].opt_libexec
