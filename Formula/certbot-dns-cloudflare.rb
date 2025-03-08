@@ -3,8 +3,8 @@ class CertbotDnsCloudflare < Formula
     
     desc "Cloudflare DNS authentication plugin for certbot"
     homepage "https://certbot.eff.org/"
-    url "https://files.pythonhosted.org/packages/5a/3c/8c379fe3c55fca6a5e55bc9c58e54d5f0c8c9e4d34d6cd94c39dcd7a2af4/certbot-dns-cloudflare-2.8.0.tar.gz"
-    sha256 "90faa2e869b7481e34977c0e5c9a52945f6b0a4cff2664cec2f339e54cb69bce"
+    url "https://files.pythonhosted.org/packages/0f/e9/05135e07cba369a0e9b8983a55ef18d3fa3522241f5a2eb4eee330c4bff1/certbot_dns_cloudflare-3.2.0.tar.gz"
+    sha256 "845bf474d51d1c6fc7060591b23a61b1ec0ba72fb948457715abf6d59b513b18"
     license "Apache-2.0"
     
     depends_on "certbot"
