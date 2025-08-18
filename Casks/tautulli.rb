@@ -1,7 +1,7 @@
 cask "tautulli" do
 
   version "2.15.3"
-  sha256 b5183bdfa31023861501c1437334726ffa281b54cf86bc60716ba0364d8bdfb0
+  sha256 "b5183bdfa31023861501c1437334726ffa281b54cf86bc60716ba0364d8bdfb0b5183bdfa31023861501c1437334726ffa281b54cf86bc60716ba0364d8bdfb0"
 
   url "https://github.com/Tautulli/Tautulli/releases/download/v#{version}/Tautulli-macos-v#{version}-universal.pkg"
   name "Tautulli"
