@@ -22,5 +22,5 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
       -
         name: Install Packages
-        run: brew install figurine certbot-dns-cloudflare
+        run: brew install figurine
 
