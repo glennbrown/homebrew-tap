@@ -101,6 +101,7 @@ class CertbotCertbotWithCloudflare < Formula
   resource "certbot-dns-cloudflare" do
     url "https://files.pythonhosted.org/packages/a9/96/6afc38a2f491b779f59cc547cd797dc2b6e0a2bca494a202732dc0029d20/certbot_dns_cloudflare-5.0.0.tar.gz"
     sha256 "84c01b06b2b0055f1b551eb3c0bc82c0a275063207cf9ea7ddc1b67129c728a4"
+  end
 
   def install
     if build.head?
