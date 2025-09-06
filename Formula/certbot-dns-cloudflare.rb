@@ -14,7 +14,6 @@ class CertbotCertbotWithCloudflare < Formula
   depends_on "python@3.13"
 
   conflicts_with "certbot", because: "both install the `certbot` binary"
-  replaces "certbot"
 
   uses_from_macos "libffi"
 
