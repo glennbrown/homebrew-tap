@@ -6,7 +6,7 @@ cask "tautulli" do
   url "https://github.com/Tautulli/Tautulli/releases/download/v#{version}/Tautulli-macos-v#{version}-universal.pkg"
   name "Tautulli"
   desc "A Python based monitoring and tracking tool for Plex Media Server."
-  homepage "https://github.com/PowerShell/PowerShell"
+  homepage "https://github.com/Tautulli/Tautulli"
 
   livecheck do
     url :url
