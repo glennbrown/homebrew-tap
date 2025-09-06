@@ -1,4 +1,4 @@
-class CertbotCertbotWithCloudflare < Formula
+class CertbotDnsCloudflare < Formula
   include Language::Python::Virtualenv
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS with Cloudflare DNS plugin"
