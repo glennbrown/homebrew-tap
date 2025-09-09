@@ -39,12 +39,20 @@ class CertbotDnsCloudflare < Formula
   end
 
   def install
-    certbot = Formula["certbot"]
-    venv = virtualenv_create(certbot.libexec, "python3.13") # use certbot's venv
+    # Get the certbot formula's virtual environment
+    certbot_venv = Formula["certbot"].libexec
 
-    # Install plugin into certbot's venv
-    venv.pip_install resources
-    venv.pip_install Pathname.pwd
+    # Install resources into certbot's existing virtual environment
+    resources.each do |r|
+      r.stage do
+        system certbot_venv/"bin/pip", "install", "--no-deps", 
+               "--no-binary", ":all:", "."
+      end
+    end
+
+    # Install the main package
+    system certbot_venv/"bin/pip", "install", "--no-deps", 
+           "--no-binary", ":all:", "."
   end
 
   test do
