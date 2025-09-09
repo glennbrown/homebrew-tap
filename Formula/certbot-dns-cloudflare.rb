@@ -7,8 +7,9 @@ class CertbotDnsCloudflare < Formula
   sha256 "84c01b06b2b0055f1b551eb3c0bc82c0a275063207cf9ea7ddc1b67129c728a4"
   license "Apache-2.0"
 
+  # needed for cryptography
+  depends_on "rust" => :build
   depends_on "certbot"
-  depends_on "rust" => :build  # needed for cryptography
   depends_on "python@3.13"
 
   uses_from_macos "libffi"
