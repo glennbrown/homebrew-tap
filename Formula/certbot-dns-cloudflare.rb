@@ -43,17 +43,17 @@ class CertbotDnsCloudflare < Formula
     # Get the certbot formula's virtual environment
     certbot_venv = Formula["certbot"].libexec
 
-    # Install resources into certbot's existing virtual environment
+    # Install dependencies first
     resources.each do |r|
       r.stage do
-        system certbot_venv/"bin/pip", "install", "--no-deps",
-               "--no-binary", ":all:", Pathname.pwd
+        system certbot_venv/"bin/pip", "install", "--no-deps", "--disable-pip-version-check",
+               "--no-cache-dir", "--no-binary", ":all:", Pathname.pwd
       end
     end
 
     # Install the main package (this is the certbot-dns-cloudflare package itself)
-    system certbot_venv/"bin/pip", "install", "--no-deps",
-           "--no-binary", ":all:", buildpath
+    system certbot_venv/"bin/pip", "install", "--no-deps", "--disable-pip-version-check",
+           "--no-cache-dir", "--no-binary", ":all:", buildpath
   end
 
   test do
