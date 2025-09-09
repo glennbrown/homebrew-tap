@@ -47,13 +47,13 @@ class CertbotDnsCloudflare < Formula
     resources.each do |r|
       r.stage do
         system certbot_venv/"bin/pip", "install", "--no-deps",
-               "--no-binary", ":all:", "."
+               "--no-binary", ":all:", Pathname.pwd
       end
     end
 
-    # Install the main package
+    # Install the main package (this is the certbot-dns-cloudflare package itself)
     system certbot_venv/"bin/pip", "install", "--no-deps",
-           "--no-binary", ":all:", "."
+           "--no-binary", ":all:", buildpath
   end
 
   test do
