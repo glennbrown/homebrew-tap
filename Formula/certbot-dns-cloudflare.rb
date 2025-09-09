@@ -8,8 +8,8 @@ class CertbotDnsCloudflare < Formula
   license "Apache-2.0"
 
   depends_on "certbot"
+  depends_on "rust" => :build  # needed for cryptography
   depends_on "python@3.13"
-  depends_on "rust" => :build  # needed for cryptograp
 
   uses_from_macos "libffi"
 
@@ -45,13 +45,13 @@ class CertbotDnsCloudflare < Formula
     # Install resources into certbot's existing virtual environment
     resources.each do |r|
       r.stage do
-        system certbot_venv/"bin/pip", "install", "--no-deps", 
+        system certbot_venv/"bin/pip", "install", "--no-deps",
                "--no-binary", ":all:", "."
       end
     end
 
     # Install the main package
-    system certbot_venv/"bin/pip", "install", "--no-deps", 
+    system certbot_venv/"bin/pip", "install", "--no-deps",
            "--no-binary", ":all:", "."
   end
 
