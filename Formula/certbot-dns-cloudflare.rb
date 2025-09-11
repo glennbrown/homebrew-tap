@@ -8,6 +8,7 @@ class CertbotDnsCloudflare < Formula
   license "Apache-2.0"
 
   depends_on "certbot"
+  depends_on "python@3.13"
 
   resource "cloudflare" do
     url "https://files.pythonhosted.org/packages/9b/8f/d3a435435c42d4b05ce2274432265c5890f91f6047e6dab52e50c811a4ea/cloudflare-2.19.4.tar.gz"
