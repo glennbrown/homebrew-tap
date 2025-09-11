@@ -8,11 +8,6 @@ class CertbotDnsCloudflare < Formula
   license "Apache-2.0"
 
   depends_on "certbot"
-  depends_on "cffi"
-  depends_on "certifi"
-  depends_on "python@3.13"
-
-  uses_from_macos "libffi"
 
   resource "cloudflare" do
     url "https://files.pythonhosted.org/packages/9b/8f/d3a435435c42d4b05ce2274432265c5890f91f6047e6dab52e50c811a4ea/cloudflare-2.19.4.tar.gz"
@@ -25,18 +20,7 @@ class CertbotDnsCloudflare < Formula
   end
 
   def install
-    # Get the certbot formula's virtual environment
-    certbot_venv = Formula["certbot"].libexec
-
-    # Install dependencies first
-    resources.each do |r|
-      r.stage do
-        system certbot_venv/"bin/python3.13", "-m", "pip", "install", "--no-deps", Pathname.pwd
-      end
-    end
-    
-    # Install the main package (this is the certbot-dns-cloudflare package itself)
-    system certbot_venv/"bin/python3.13", "-m", "pip", "install", "--no-deps", buildpath
+    virtualenv_install_with_resources
   end
 
   test do
