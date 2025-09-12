@@ -25,7 +25,7 @@ class CertbotDnsCloudflare < Formula
     venv.pip_install resources
     venv.pip_install_and_link buildpath
 
-    certbot_site_packages = Formula["certbot"].opt_lib/"python3.13/site-packages"
+    certbot_site_packages = Formula["certbot"].opt_libexec/"lib/python3.13/site-packages"
     (certbot_site_packages/"homebrew-certbot-dns-cloudflare.pth").write venv.site_packages
   end
 
