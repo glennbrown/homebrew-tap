@@ -15,7 +15,7 @@ cask "ersatztv" do
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  depends_on formula: "ffmpeg"
+  depends_on formula: "ffmpeg@7"
 
   app "ErsatzTV.app"
 
