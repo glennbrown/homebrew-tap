@@ -1,7 +1,7 @@
 cask "ersatztv" do
   arch arm: "arm64", intel: "x64"
 
-  version 26.1.1
+  version "26.1.1"
   sha256 arm: "42d8ddada699279382947f5ea43434b202d78d663608dd5ae50a55a90bf69527",
          intel: "ba08372e33f872e0e1a117122b01688028860de864a16b06c62895b62625840d"
 
