@@ -7,51 +7,41 @@ class Eplustv < Formula
 
   depends_on "node"
   depends_on "yt-dlp"
-
+ 
   def install
     # Install all dependencies (including devDeps needed for TypeScript)
     system "npm", "ci"
-
+ 
     # Install everything into libexec to keep it self-contained
     libexec.install Dir["*", ".??*"]
-
+ 
     # Create config directory that persists across runs
     (var/"eplustv").mkpath
-
-    # Create wrapper script
-    (bin/"eplustv").write <<~BASH
-      #!/bin/bash
-      export EPLUSTV_CONFIG_DIR="${EPLUSTV_CONFIG_DIR:-#{var}/eplustv}"
-      cd "#{libexec}"
-      exec "#{Formula["node"].opt_bin}/node" \\
-        --import tsx \\
-        "#{libexec}/index.tsx" "$@"
-    BASH
   end
-
+ 
   def caveats
     <<~EOS
       EPlusTV stores its configuration and state in:
         #{var}/eplustv
-
-      To override, set the EPLUSTV_CONFIG_DIR environment variable.
-
+ 
       By default the server listens on port 8000. Access it at:
         http://localhost:8000
-
-      To change the port, set the PORT environment variable:
-        PORT=9000 eplustv
+ 
+      Start the service with:
+        brew services start eplustv
     EOS
   end
-
+ 
   service do
-    run opt_bin/"eplustv"
+    run [libexec/"node_modules/.bin/tsx", libexec/"index.tsx"]
+    environment_variables EPLUSTV_CONFIG_DIR: var/"eplustv",
+                          PATH:              "#{Formula["node"].opt_bin}:#{Formula["yt-dlp"].opt_bin}:/usr/bin:/bin"
+    working_dir libexec
     keep_alive true
-    working_dir var/"eplustv"
     log_path var/"log/eplustv.log"
     error_log_path var/"log/eplustv.log"
   end
-
+ 
   test do
     # Verify node can load the entry point without errors (dry run)
     assert_match "EPlusTV", shell_output("cat #{libexec}/package.json")
