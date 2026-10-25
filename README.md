@@ -1,7 +1,11 @@
-<<<<<<< HEAD
-# Glennbrown Tap
+# Glenn's Homebrew Repository
 
-## How do I install these formulae?
+This is my personal tap where I maintain some formulae or casks not in upstream Homebrew.
+
+Current Formulae
+- Soju (Go Based IRC Bouncer)
+
+## Installation
 
 `brew install glennbrown/tap/<formula>`
 
@@ -17,15 +21,3 @@ brew "<formula>"
 ## Documentation
 
 `brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
-||||||| empty tree
-=======
-# Glenn's Homebrew Repository
-
-[![CI](https://github.com/glennbrown/homebrew-tap/actions/workflows/ci.yml/badge.svg)](https://github.com/glennbrown/homebrew-tap/actions/workflows/ci.yml)
-
-This is a simple brew tap to get some missing formulae's.
-
-## Installation
-
-To install this tap in your sources just run `brew tap glennbrown/tap`
->>>>>>> origin/main
