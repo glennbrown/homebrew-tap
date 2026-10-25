@@ -2,6 +2,7 @@ class Soju < Formula
   desc "User-friendly IRC bouncer"
   homepage "https://soju.im"
   url "https://codeberg.org/emersion/soju/releases/download/v0.11.1/soju-0.11.1.tar.gz"
+  version "0.11.1"
   sha256 "661151a5fbe1bb8ddc5a30ccd8616c8d54ae13a09a2cd68bc84ce4bce743babb"
   license "AGPL-3.0-only"
 
