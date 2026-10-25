@@ -43,9 +43,9 @@ class Soju < Formula
       Configuration: #{etc}/soju/config
       Database:      #{var}/lib/soju/main.db
 
-      The default configuration only listens on localhost without TLS.
-      Edit the configuration to add a "tls" directive and an ircs:// listener
-      before exposing soju to the network. Reload with:
+      The default configuration only accepts plain-text connections from
+      localhost. Add a "tls" directive and an ircs:// listener to the
+      configuration before exposing soju to the network, then apply it with:
         brew services restart soju
 
       Create a user with:
