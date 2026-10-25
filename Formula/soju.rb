@@ -9,6 +9,8 @@ class Soju < Formula
   depends_on "scdoc" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "1"
+
     system "make", "all",
            "GOFLAGS=-trimpath",
            "SYSCONFDIR=#{etc}",
